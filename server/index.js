@@ -29,6 +29,9 @@ app.use(express.static(path.join(__dirname, '../client')));
 // Serve shared modules at /shared/ (used by ES module imports from client/)
 app.use('/shared', express.static(path.join(__dirname, '../shared')));
 
+// Serve Phaser from node_modules (avoid CDN dependency)
+app.use('/phaser', express.static(path.join(__dirname, '../node_modules/phaser/dist')));
+
 // API routes
 app.use(createGameRouter(gameState));
 
