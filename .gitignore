@@ -5,3 +5,6 @@ startup2.log
 startup2_err.log
 startup3.log
 startup3_err.log
+
+srv*.log
+startup*.log
