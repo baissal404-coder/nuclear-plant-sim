@@ -60,7 +60,7 @@ function handleRoomCreate(io, gameState, socket, data) {
   }
 
   const difficulty = data?.difficulty || 'NORMAL';
-  const room = gameState.createRoom(null, { public: data?.public !== false, difficulty });
+  const room = gameState.createRoom(undefined, { public: data?.public !== false, difficulty });
   if (!room) {
     socket.emit(EVENT_NAMES.ROOM_CREATE, { success: false, error: 'Failed to create room' });
     return;
