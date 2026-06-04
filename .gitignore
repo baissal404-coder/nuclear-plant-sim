@@ -1,0 +1,7 @@
+node_modules/
+startup_test.log
+startup_err.log
+startup2.log
+startup2_err.log
+startup3.log
+startup3_err.log
