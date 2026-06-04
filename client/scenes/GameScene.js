@@ -127,6 +127,7 @@ export class GameScene extends Phaser.Scene {
   setupInput() {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.keys = this.input.keyboard.addKeys('W,A,S,D,E,T,TAB,ENTER,BACKSPACE,V,R,F');
+    this.keys.SHIFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT);
 
     this.input.keyboard.on('keydown', (event) => this.handleKeyboard(event));
   }
@@ -204,7 +205,7 @@ export class GameScene extends Phaser.Scene {
       seq: ++this.inputSeq,
       pos: { x: this.localPlayer.x, y: this.localPlayer.y },
       vel: { x: dx * this.moveSpeed, y: dy * this.moveSpeed },
-      inputs: { dx, dy, sprint: this.keys.ONE.isDown || this.mobileInput.isPressed('shift') },
+      inputs: { dx, dy, sprint: this.keys.SHIFT.isDown || this.mobileInput.isPressed('shift') },
       action: null,
     };
     this.pendingInputs.push(input);
